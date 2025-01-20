@@ -11,6 +11,11 @@ export default function App() {
     setHue(event.currentTarget.value);
     setColor(randomColor({ hue: event.currentTarget.value }));
   }
+
+  function handleLuminosityChange(event) {
+    setColor(randomColor({ luminosity: event.currentTarget.value }));
+  }
+
   return (
     <div
       style={{
@@ -27,7 +32,15 @@ export default function App() {
         Hue:&nbsp;
         <input value={hue} onChange={handleHueChange} />
       </label>
-
+      <label>
+        Luminosity:&nbsp;
+        <select onChange={handleLuminosityChange}>
+          <option value="random">random</option>
+          <option value="dark">dark</option>
+          <option value="light">light</option>
+          <option value="bright">bright</option>
+        </select>
+      </label>
       <button
         style={{
           backgroundColor: '#000',
