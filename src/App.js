@@ -5,6 +5,12 @@ import ColorBlock from './ColorBlock';
 
 export default function App() {
   const [color, setColor] = useState(randomColor());
+  const [hue, setHue] = useState('');
+
+  function handleHueChange(event) {
+    setHue(event.currentTarget.value);
+    setColor(randomColor({ hue: event.currentTarget.value }));
+  }
   return (
     <div
       style={{
@@ -17,6 +23,7 @@ export default function App() {
       }}
     >
       <ColorBlock color={color} />
+      <input value={hue} onChange={handleHueChange} />
       <button
         style={{
           backgroundColor: '#000',
