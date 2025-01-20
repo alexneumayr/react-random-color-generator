@@ -23,7 +23,11 @@ export default function App() {
       }}
     >
       <ColorBlock color={color} />
-      <input value={hue} onChange={handleHueChange} />
+      <label>
+        Hue:&nbsp;
+        <input value={hue} onChange={handleHueChange} />
+      </label>
+
       <button
         style={{
           backgroundColor: '#000',
