@@ -12,16 +12,11 @@ export default function ColorBlock(props) {
         alignItems: 'center',
         flexDirection: 'column',
         transition: 'background-color 0.5s',
+        fontSize: '20px',
+        fontWeight: 'bold',
       }}
     >
-      <p
-        style={{
-          fontSize: '20px',
-          fontWeight: 'bold',
-        }}
-      >
-        Generated Color: {props.color}
-      </p>
+      Generated Color: {props.color}
     </div>
   );
 }
