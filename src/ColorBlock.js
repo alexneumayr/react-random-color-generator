@@ -11,6 +11,7 @@ export default function ColorBlock(props) {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
+        transition: 'background-color 0.5s',
       }}
     >
       <h1
