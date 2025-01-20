@@ -16,7 +16,7 @@ export default function ColorBlock(props) {
         fontWeight: 'bold',
       }}
     >
-      {`Generated Color: ${props.color}`}
+      Generated Color: {props.color}
     </div>
   );
 }
