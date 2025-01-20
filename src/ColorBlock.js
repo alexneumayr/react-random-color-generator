@@ -14,14 +14,14 @@ export default function ColorBlock(props) {
         transition: 'background-color 0.5s',
       }}
     >
-      <p
+      <span
         style={{
           fontSize: '20px',
           fontWeight: 'bold',
         }}
       >
         Generated color: {props.color}
-      </p>
+      </span>
     </div>
   );
 }
