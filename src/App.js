@@ -8,6 +8,7 @@ export default function App() {
   return (
     <div>
       <ColorBlock color={color} />
+      <button onClick={() => setColor(randomColor())}>Generate</button>
     </div>
   );
 }
