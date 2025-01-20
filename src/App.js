@@ -5,15 +5,23 @@ import ColorBlock from './ColorBlock';
 
 export default function App() {
   const [color, setColor] = useState(randomColor());
-  const [hue, setHue] = useState('');
+  const [hue, setHue] = useState('random');
+  const [luminosity, setLuminosity] = useState('');
 
   function handleHueChange(event) {
     setHue(event.currentTarget.value);
-    setColor(randomColor({ hue: event.currentTarget.value }));
+    setColor(
+      randomColor({ hue: event.currentTarget.value, luminosity: luminosity }),
+    );
   }
 
   function handleLuminosityChange(event) {
-    setColor(randomColor({ luminosity: event.currentTarget.value }));
+    setLuminosity(event.currentTarget.value);
+    setColor(randomColor({ luminosity: event.currentTarget.value, hue: hue }));
+  }
+
+  function handleGenerateButtonClick() {
+    setColor(randomColor({ luminosity: luminosity, hue: hue }));
   }
 
   return (
@@ -50,7 +58,7 @@ export default function App() {
           marginTop: '10px',
           width: '150px',
         }}
-        onClick={() => setColor(randomColor())}
+        onClick={handleGenerateButtonClick}
       >
         Generate
       </button>
