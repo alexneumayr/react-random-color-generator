@@ -5,7 +5,7 @@ import ColorBlock from './ColorBlock';
 
 export default function App() {
   const [color, setColor] = useState(randomColor());
-  const [hue, setHue] = useState('random');
+  const [hue, setHue] = useState('');
   const [luminosity, setLuminosity] = useState('');
 
   function handleHueChange(event) {
@@ -43,7 +43,7 @@ export default function App() {
       <label>
         Luminosity:&nbsp;
         <select onChange={handleLuminosityChange}>
-          <option value="random">random</option>
+          <option value="">random</option>
           <option value="dark">dark</option>
           <option value="light">light</option>
           <option value="bright">bright</option>
